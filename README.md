@@ -48,7 +48,7 @@
 | city          | string     | null: false                    |
 | house_number  | string     | null: false                    |
 | buildind_name | string     |                                |
-| phone         | integer    | null: false                    |
+| phone         | string     | null: false                    |
 | product       | references | null: false, foreign_key: true |
 
 ### Association
