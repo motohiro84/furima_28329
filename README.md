@@ -2,14 +2,16 @@
 
 ## users テーブル
 
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| nickname     | string | null: false |
-| email        | string | null: false |
-| password     | string | null: false |
-| name         | string | null: false |
-| name-reading | string | null: false |
-| birthday     | data   | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| password           | string | null: false |
+| first_name         | string | null: false |
+| last_name          | string | null: false |
+| first_name_reading | string | null: false |
+| last_name_reading  | string | null: false |
+| birthday           | data   | null: false |
 
 ### Association
 
@@ -35,24 +37,23 @@
 
 - belongs_to :user
 - belongs_to :order
-- belongs_to_active_hash :category
-- belongs_to_active_hash :prefecture
+- has_one :address
 
 ## addresses テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| postal_code   | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| house_number  | string  | null: false |
-| buildind_name | string  |             |
-| phone         | integer | null: false |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| house_number  | string     | null: false                    |
+| buildind_name | string     |                                |
+| phone         | integer    | null: false                    |
+| product       | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :order
-- belongs_to_active_hash :prefecture
+- belongs_to :product
 
 ## orders テーブル
 
@@ -60,10 +61,8 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | product       | references | null: false, foreign_key: true |
-| address       | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - has_many :products
-- has_one :address
