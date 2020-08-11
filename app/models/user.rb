@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
 
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
-  NAME＿READING_REGEX = /\A[ァ-ヶー－]+\z/
+  NAME_READING_REGEX = /\A[ァ-ヶー－]+\z/
   HALF_REGEX = /\A[a-zA-Z0-9]+\z/
   MIXTURE_REGEX = /(?=.*?[a-z])(?=.*?[\d])/i
 
