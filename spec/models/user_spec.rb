@@ -88,6 +88,31 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("生年月日を入力してください")
       end
+      it "姓が全角でないと登録できない" do
+        @user.first_name = "ﾊﾝｶｸ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("苗字は全角で入力してください")
+      end
+      it "名が全角でないと登録できない" do
+        @user.last_name = "ﾊﾝｶｸ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("名前は全角で入力してください")
+      end
+      it "姓のフリガナが全角でないと登録できない" do
+        @user.first_name_reading = "ﾊﾝｶｸ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("苗字(カナ)は全角カタカナで入力して下さい")
+      end
+      it "名のフリガナが全角でないと登録できない" do
+        @user.last_name_reading = "ﾊﾝｶｸ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("名前(カナ)は全角カタカナで入力して下さい")
+      end
+      it "メールアドレスに@が含まれないと登録できない" do
+        @user.email = "testcom"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
+      end
     end
   end
 end
