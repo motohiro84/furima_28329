@@ -8,3 +8,23 @@ ja:
         first_name_reading: 苗字(カナ)
         last_name_reading: 名前(カナ)
         birthday: 生年月日
+
+  enums:
+    product:
+      category:
+        '---': "---"
+        unused: "新品、未使用"
+        nearly_unused: "未使用に近い"
+        not_injured: "目立った傷や汚れなし"
+        bit_injured: "やや傷や汚れあり"
+        injured: '傷や汚れあり'
+        bad: '全体的に状態が悪い'
+      postage:
+        '---': "---"
+        prepayment: "元払い"
+        freight_collect: "着払い"
+      shipment:
+        '---': "---"
+        1_to_2: "1~2日で発送"
+        2_to_3: "2~3日で発送"
+        4_to_7: "4~7日で発送"
