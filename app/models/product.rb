@@ -22,8 +22,8 @@ class Product < ApplicationRecord
 
   enum postage:{
     '---':            1,
-    prepayment:       2,
-    freight_collect:  3,
+    freight_collect:  2,
+    prepayment:       3,
   },  _prefix: true
 
   enum shipment:{
