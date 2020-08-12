@@ -68,3 +68,7 @@ gem 'devise'
 gem 'enum_help'
 
 gem 'rails-i18n'
+
+group :production do
+  gem 'rails_12factor'
+end
