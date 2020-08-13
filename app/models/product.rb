@@ -8,8 +8,6 @@ class Product < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :prefecture
 
-
-
   enum condition:{
     '---':           1,
     unused:          2,
@@ -32,5 +30,26 @@ class Product < ApplicationRecord
     "2_to_3": 3,
     "4_to_7": 4,
   },  _prefix: true
+
+  NUMBER_REGEX = /\A[0-9]+\z/
+
+  with_options presence: true do
+    validates :image
+    validates :title, length: { maximum: 40 }
+    validates :text, length: { maximum: 1000 }
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 10000000 , message: 'は300〜9,999,999円の間で設定してください' }
+    validates :price, format: { with: NUMBER_REGEX, message: "は半角数字で入力してください" }
+  end
+
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
+    validates :category_id
+    validates :prefecture_id
+  end
+
+  with_options exclusion: { in: ['---'], message: 'を選択してください' } do
+    validates :condition
+    validates :postage
+    validates :shipment
+  end
 
 end
