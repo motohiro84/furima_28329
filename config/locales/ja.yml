@@ -8,6 +8,16 @@ ja:
         first_name_reading: 苗字(カナ)
         last_name_reading: 名前(カナ)
         birthday: 生年月日
+      product:
+        image: 出品画像
+        title: 商品名
+        text: 商品の説明
+        price: 価格
+        category_id: カテゴリー
+        prefecture_id: 発送元の地域
+        condition: 商品の状態
+        postage: 配送料の負担
+        shipment: 発送までの日数
   enums:
     product:
       condition:

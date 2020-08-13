@@ -31,14 +31,14 @@ class Product < ApplicationRecord
     "4_to_7": 4,
   },  _prefix: true
 
-  NUMBER_REGEX = /\A[0-9]+\z/
+  NUM_REGEX = /\A(?=.*?[\d])+\z/
 
   with_options presence: true do
-    validates :image
-    validates :title, length: { maximum: 40 }
-    validates :text, length: { maximum: 1000 }
+    validates_presence_of :image, message: "を選択してください"
+    validates :title, length: { maximum: 40, message: "は40文字までです" }
+    validates :text, length: { maximum: 1000, message: "は1000文字までです" }
+    validates :price, format: { with: NUM_REGEX, message: "は半角数字で入力してください" }
     validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 10000000 , message: 'は300〜9,999,999円の間で設定してください' }
-    validates :price, format: { with: NUMBER_REGEX, message: "は半角数字で入力してください" }
   end
 
   with_options numericality: { other_than: 1, message: 'を選択してください' } do
