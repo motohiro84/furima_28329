@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :product do
-    title         {Faker::Lorem.paragraph_by_chars(number: 10 )}
-    text          {Faker::Lorem.sentence}
-    price         {Faker::Number.within(range: 300..9999999)}
-    category_id   {Faker::Number.within(range: 2..48)}
-    prefecture_id {Faker::Number.within(range: 2..11)}
-    condition     {Faker::Number.within(range: 2..7)}
-    postage       {Faker::Number.within(range: 2..3)}
-    shipment      {Faker::Number.within(range: 2..4)}
+    title         {"木の絵"}
+    text          {"木が描かれた絵"}
+    price         {3000}
+    category_id   {2}
+    prefecture_id {2}
+    condition     {2}
+    postage       {2}
+    shipment      {2}
     association :user 
   end
 end
