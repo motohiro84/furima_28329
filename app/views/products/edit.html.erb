@@ -9,7 +9,7 @@ app/assets/stylesheets/items/new.css %>
     <h2 class="items-sell-title">商品の情報を入力</h2>
     <%= form_with model: @product, url: product_path, local: true do |f| %>
 
-      <%= render partial: "form", locals: { f: f } %>
+      <%= render partial: "shared/form", locals: { f: f } %>
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
