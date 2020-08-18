@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_action :move_to_index, except: [:index]
-  before_action :set_product, only: [:edit, :update]
+  before_action :move_to_index, except: [:index, :shoe]
+  before_action :set_product, only: [:edit, :update, :show, :destroy]
 
   def index
   end
@@ -13,10 +13,18 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to root_path
     else
       render :new
     end
+  end
+
+  def show
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to root_path
   end
 
   def edit
