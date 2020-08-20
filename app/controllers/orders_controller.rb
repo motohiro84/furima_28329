@@ -2,16 +2,20 @@ class OrdersController < ApplicationController
 
   def index
     @product = Product.find(params[:product_id])
-  end
-
-  def new
+    if current_user.id == @product.user_id || Order.find_by(product_id: @product.id)
+      redirect_to root_path
+    end
   end
 
   def create
     @product = Product.find(params[:product_id])
     @order = ProductOrder.new(order_params)
     @order.valid?
-    @order.save
+    if @order.save
+      redirect_to root_path
+    else
+      render "index"
+    end
   end
 
   private
