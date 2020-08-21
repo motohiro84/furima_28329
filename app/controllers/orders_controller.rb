@@ -1,10 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: [:index, :create, :pay_product]
+  before_action :set_product_order, only: [:index, :create, :pay_product]
 
 
   def index
-    @order = ProductOrder.new(order_params)
     if current_user.id == @product.user_id || Order.find_by(product_id: @product.id)
       redirect_to root_path
     end
