@@ -19,6 +19,16 @@ ja:
         postage: 配送料の負担
         shipment: 発送までの日数
         user: ユーザー情報
+  activemodel:
+    attributes:
+      product_order:
+        token: クレジットカード情報
+        prefecture_id: 都道府県
+        postal_code: 郵便番号
+        city: 市区町村
+        house_number: 番地
+        building_name: 建物名
+        phone: 電話番号
   enums:
     product:
       condition:
