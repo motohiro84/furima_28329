@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :show, :destroy]
 
   def index
+    @products = Product.includes(:user).order("created_at DESC")
+    @order = ProductOrder.new
   end
 
   def new
@@ -20,6 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @order = ProductOrder.new
   end
 
   def destroy
