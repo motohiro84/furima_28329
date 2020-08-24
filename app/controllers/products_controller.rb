@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:user).order("created_at DESC")
-    @order = ProductOrder.new
   end
 
   def new
@@ -22,7 +21,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @order = ProductOrder.new
   end
 
   def destroy
