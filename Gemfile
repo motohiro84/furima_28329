@@ -77,6 +77,8 @@ gem 'active_hash'
 
 gem 'payjp'
 
+ gem "aws-sdk-s3", require: false
+
 group :production do
   gem 'rails_12factor'
 end
