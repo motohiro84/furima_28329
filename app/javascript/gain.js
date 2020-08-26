@@ -10,4 +10,5 @@ function calculator() {
   })
 };
 
-setInterval(calculator, 1000);
+// setInterval(calculator, 1000);
+window.addEventListener( "DOMContentLoaded" , calculator )
