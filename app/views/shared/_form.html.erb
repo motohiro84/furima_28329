@@ -7,10 +7,14 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
+      <div id ="image-list">
+        <%= image_tag @product.image, id: 'image' if @product.image.present? %>
+      </div>
         <p>
           クリックしてファイルをアップロード
         </p>
         <%= f.file_field :image, id:"item-image" %>
+        <div id ="image-list"></div>
       </div>
     </div>
     <%# /出品画像 %>
