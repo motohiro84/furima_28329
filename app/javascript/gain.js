@@ -1,3 +1,4 @@
+if (document.URL.match( /new/ )){
 function calculator() {
   const figure = document.getElementById("item-price");
   figure.addEventListener("keyup", (e) => {
@@ -12,3 +13,4 @@ function calculator() {
 
 // setInterval(calculator, 1000);
 window.addEventListener( "DOMContentLoaded" , calculator )
+}

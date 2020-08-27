@@ -1,0 +1,5 @@
+#image {
+  width: 33vh;
+  height: 33vh;
+  object-fit: contain;
+}
