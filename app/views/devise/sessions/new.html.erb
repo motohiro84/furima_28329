@@ -26,6 +26,7 @@
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
   </div>
   <div class='login-btn'>
+  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
   </div>
 </div>

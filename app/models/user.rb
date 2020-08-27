@@ -2,10 +2,26 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :products
   has_many :orders
+  has_many :sns_credentials
+
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = User.where(email: auth.info.email).first_or_initialize(
+      nickname:   auth.info.name,
+      email:      auth.info.email,
+      first_name: auth.info.first_name,
+      last_name:  auth.info.last_name
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    { user: user, sns: sns }
+  end
 
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
   NAME_READING_REGEX = /\A[ァ-ヶー－]+\z/.freeze
