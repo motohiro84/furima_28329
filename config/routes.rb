@@ -5,15 +5,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  resources :users, only:[:register] do
+      get 'register', on: :collection
+  end
+
   root to: 'products#index'
   resources :products do
     resources :orders, only:[:index, :create]
-  end
-
-  resources :users do
-    collection do
-      get 'register'
-    end
-  end
-  
+  end  
 end

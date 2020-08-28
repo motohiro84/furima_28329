@@ -12,9 +12,21 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-str {
+  font-size: 14px;
+  margin-top: 50px;
 }
 
 .login-flash-message {
   text-align: center;
   color: red;
+}
+
+.form-btn-text {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
 }

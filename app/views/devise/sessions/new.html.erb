@@ -3,9 +3,20 @@
 <%= form_with model: resource, as: resource_name, url: session_path(resource_name), class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
-    <h1 class='form-header-text'>
-      会員情報入力
-    </h1>
+    <div class='btn-str'>アカウントをお持ちでない方はこちら</div>
+    <div class='form-btn-text'>
+      <%= link_to '新規登録', register_users_path, class: "btn-register", method: :get %>
+    </div>
+  </div>
+  <div class='log-in-btn'>
+    <%= link_to user_facebook_omniauth_authorize_path, class: "btn-facebook", method: :post do %>
+      <i class="fab fa-facebook-square"></i>Facebookでログイン
+    <% end %>
+     
+    <%= link_to  user_google_oauth2_omniauth_authorize_path, class: "btn-google", method: :post do %>
+        <%= image_tag 'google.jpg', size: '40x40' ,class: "google-btn-icon" %>Googleでログイン
+       <% end %>
+    
   </div>
   <div class='login-flash-message'>
     <%= flash[:notice] %>
@@ -26,7 +37,6 @@
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
   </div>
   <div class='login-btn'>
-  <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
   </div>
 </div>
