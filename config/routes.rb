@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   resources :products do
     resources :orders, only:[:index, :create]
   end
+
+  resources :users do
+    collection do
+      get 'register'
+    end
+  end
   
 end
