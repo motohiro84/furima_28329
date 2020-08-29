@@ -211,11 +211,26 @@
 }
 
 .commnt-str {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
   font-size: 20px;
 }
 
 .comment-view {
+  margin-left: 10px;
   margin-bottom: 5px;
+}
+
+.no-item:hover {
+  cursor: no-drop;
+}
+
+.comment-sentence {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-time {
+  font-size: 5px;
+  color: gray;
+  margin-right: 10px;
 }

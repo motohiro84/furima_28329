@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       @user = User.find(@comment.user_id)
-      ActionCable.server.broadcast 'comment_channel', {content: @comment, nickname: @user.nickname }
+      ActionCable.server.broadcast 'comment_channel', {content: @comment, nickname: @user.nickname, created_at: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S') }
     end
     # redirect_to "/products/#{@comment.product.id}"
   end
