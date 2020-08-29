@@ -172,6 +172,7 @@
   font-size: 18px;
   border-radius: 100px;
   margin-bottom: 2vh;
+  display: inline-block;
 }
 
 .comment-flag {
@@ -203,4 +204,18 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+.comments {
+  text-align: left;
+}
+
+.commnt-str {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.comment-view {
+  margin-bottom: 5px;
 }

@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   has_one_attached :image
   belongs_to_active_hash :category
   belongs_to_active_hash :prefecture
+  has_many :comments
 
   enum condition: {
     '---': 1,
