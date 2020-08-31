@@ -101,6 +101,7 @@
         <% @comments.each do |comment| %>
         <div class="comment-sentence" >
           <div class="comment-view" >
+            <%# <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" >：</strong> %>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
           </div>

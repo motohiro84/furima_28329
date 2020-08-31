@@ -13,7 +13,7 @@ consumer.subscriptions.create("CommentChannel", {
     const html = `<div class="comment-sentence" >
                   <div class="comment-view">
                   <strong>
-                  <a href=“/users/${data.content.user_id}”>${data.nickname}</a>：
+                  <a href=“#”>${data.nickname}</a>：
                   </strong>${data.content.text}
                   </div>
                   <div class="comment-time">
