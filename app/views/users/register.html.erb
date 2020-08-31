@@ -10,14 +10,21 @@
   </div>
 
   <div class='log-in-btn'>
+
     <%= link_to 'メールアドレスで登録', new_user_registration_path, class: "btn-mail", method: :get %>
+    
     <%= link_to user_facebook_omniauth_authorize_path, class: "btn-facebook", method: :post do %>
       <i class="fab fa-facebook-square"></i>Facebookで登録
     <% end %>
-    
+
+    <%= link_to user_line_omniauth_authorize_path, class: "btn-line", method: :post do %>
+      <i class="fab fa-line"></i>lineで登録
+    <% end %>
+
     <%= link_to  user_google_oauth2_omniauth_authorize_path, class: "btn-google", method: :post do %>
-        <%= image_tag 'google.jpg', size: '40x40' ,class: "google-btn-icon" %>Googleで登録
-       <% end %>
+      <%= image_tag 'google.jpg', size: '40x40' ,class: "google-btn-icon" %>Googleで登録
+    <% end %>
+
     
   </div>
 
