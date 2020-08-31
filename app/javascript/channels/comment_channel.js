@@ -20,7 +20,6 @@ consumer.subscriptions.create("CommentChannel", {
                   ${data.created_at}
                   </div>
                   </div>`;
-    console.log(data)
     const comments = document.getElementById('comments');
     const newComment = document.getElementById('comment_text');
     comments.insertAdjacentHTML('beforeend', html);
