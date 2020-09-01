@@ -15,7 +15,9 @@
       <i class="fab fa-facebook-square"></i>Facebookで登録
     <% end %>
 
-    <%= link_to "Yahoo! JAPAN で登録",user_yahoojp_omniauth_authorize_path, method: :post %>
+    <%= link_to user_yahoojp_omniauth_authorize_path, class: "btn-yahoo", method: :post do %>
+        <%= image_tag 'yahoo.png', size: '25x25' ,class: "yahoo-btn-icon" %>Yahooで登録
+    <% end %>
     
     <%= link_to  user_google_oauth2_omniauth_authorize_path, class: "btn-google", method: :post do %>
         <%= image_tag 'google.jpg', size: '40x40' ,class: "google-btn-icon" %>Googleで登録

@@ -93,3 +93,26 @@ i {
   top: 5px;
   left: 20px;
 }
+
+.btn-yahoo{
+  width: 100%;
+  background: #ff0033;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+  position: relative;
+  display: block;
+}
+
+.yahoo-btn-icon {
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 12px;
+  left: 28px;
+}
