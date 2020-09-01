@@ -12,6 +12,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     authorization
   end
   
+  def yahoojp
+    authorization
+  end
+
    private
   
    def authorization
