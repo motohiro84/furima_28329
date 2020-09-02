@@ -1,5 +1,8 @@
 <%# cssは商品出品のものを併用しています。
 app/assets/stylesheets/items/new.css %>
+<% content_for(:body_attributes) do %>
+    data-turbolinks="true"
+<% end %>
 
 <div class="items-sell-contents">
   <header class="items-sell-header">
