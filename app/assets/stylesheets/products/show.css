@@ -234,3 +234,28 @@
   color: gray;
   margin-right: 10px;
 }
+
+#modoru {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0.5);
+  -ms-transform: translateY(-50%);
+  cursor: pointer;
+  font-size   : 40pt;
+  line-height : 1em;
+}
+
+#susumu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) scaleX(0.5);
+  -ms-transform: translateY(-50%);
+  cursor: pointer;
+  font-size   : 40pt;
+  line-height : 1em;
+}
+
+.snap-btn:hover {
+  color: #fff;
+}

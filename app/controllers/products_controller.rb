@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
-    #@product.imagesに対してひとつずつプッシュしていく。params[:product][:images]をeachで回して、、、
     @product.images = []
     array_images(@product.images)
     binding.pry
