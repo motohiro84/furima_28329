@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   has_many_attached :images
   belongs_to_active_hash :category
   belongs_to_active_hash :prefecture
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def self.search(search)
     if search != ""

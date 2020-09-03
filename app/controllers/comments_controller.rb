@@ -1,11 +1,15 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+    @product = Product.find(params[:product_id])
+    @user = User.find(@comment.user_id)
+    @comments = Product.find(params[:product_id]).comments.includes(:user)
     if @comment.save
-      @user = User.find(@comment.user_id)
       ActionCable.server.broadcast 'comment_channel', {content: @comment, nickname: @user.nickname, created_at: @comment.created_at.strftime('%Y/%m/%d %H:%M:%S') }
+    else
+      render "products/show"
     end
-    # redirect_to "/products/#{@comment.product.id}"
+    
   end
 
   private

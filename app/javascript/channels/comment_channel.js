@@ -10,6 +10,7 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
+    debugger
     const html = `<div class="comment-sentence" >
                   <div class="comment-view">
                   <strong>

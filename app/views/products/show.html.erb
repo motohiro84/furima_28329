@@ -102,6 +102,7 @@
   <div class="comment-box">
     <% if current_user %>
       <%= form_with(model: [@product, @comment], local: true) do |form| %>
+      <%= render 'shared/error_messages', model: form.object %>
         <%= form.text_area :text, placeholder: "コメント", class: "comment-text" %>
           <%= button_tag type:"submit", class:"comment-btn" do %>
             <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25" %>コメントする
