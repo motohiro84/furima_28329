@@ -10,9 +10,12 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+  
   def create
     @product = Product.new(product_params)
+    @product.images = []
+    array_images(@product.images)
+    binding.pry
     if @product.save
       redirect_to root_path
     else
@@ -47,7 +50,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :text, :price, :category_id, :condition, :postage, :prefecture_id, :shipment, :image).merge(user_id: current_user.id)
+    params.require(:product).permit(:title, :text, :price, :category_id, :condition, :postage, :prefecture_id, :shipment, images: [] ).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -57,4 +60,11 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
+  def array_images(images)
+    params[:product][:images].each_key{|i|
+      images.attach(params[:product][:images][i][:image])
+    }
+  end
+
 end

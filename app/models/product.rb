@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_one :order
   has_one :address
-  has_one_attached :image
+  has_many_attached :images
   belongs_to_active_hash :category
   belongs_to_active_hash :prefecture
   has_many :comments
@@ -34,8 +34,8 @@ class Product < ApplicationRecord
 
   NUM_REGEX = /\A\d{3,8}\z/.freeze
 
+  validates_presence_of :images, message: 'を選択してください'
   with_options presence: true do
-    validates_presence_of :image, message: 'を選択してください'
     validates :title, length: { maximum: 40, message: 'は40文字までです' }
     validates :text, length: { maximum: 1000, message: 'は1000文字までです' }
     validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10_000_000, message: 'は300〜9,999,999円の間で設定してください' }

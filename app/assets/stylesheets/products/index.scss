@@ -250,6 +250,26 @@ a {
   background-color: #FFF;
 }
 
+.snap > div{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  scroll-snap-align:center;
+}
+
+.snap {
+  display: flex;
+  overflow-x: hidden;;
+  scroll-snap-type: x mandatory;
+}
+
+.item-img-content2 {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  position: relative;
+}
 
 .item-img-content {
   position: relative;

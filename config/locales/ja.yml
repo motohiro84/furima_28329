@@ -9,7 +9,7 @@ ja:
         last_name_reading: 苗字(カナ)
         birthday: 生年月日
       product:
-        image: 出品画像
+        images: 出品画像
         title: 商品名
         text: 商品の説明
         price: 販売価格

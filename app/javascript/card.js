@@ -1,3 +1,4 @@
+if (document.URL.match( /orders/ )){
 const pay = () => {
   Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   const form = document.getElementById("charge-form");
@@ -29,10 +30,10 @@ const pay = () => {
       } else {
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
-        console.log("123")
       }
     });
   });
 };
 
 window.addEventListener("load", pay);
+}

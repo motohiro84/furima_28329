@@ -1,3 +1,7 @@
+<% content_for(:body_attributes) do %>
+    data-turbolinks="true"
+<% end %>
+
 <%= render "shared/header" %>
 
 <%# 商品の概要 %>
@@ -6,8 +10,21 @@
     <h2 class="name">
       <%= @product.title %>
     </h2>
-    <div class='item-img-content'>
-      <%= image_tag @product.image ,class:"item-box-img" %>
+    <div class='item-img-content2'>
+
+      <div class="snap" id="jsnap">
+        <% @product.images.each do |image| %>
+          <div><%= image_tag image, class:"item-box-img" %></div>
+        <% end %>
+      </div>
+
+        <div id="modoru" class="snap-btn" >
+          <span>＜</span>
+        </div>
+        <div id="susumu" class="snap-btn" >
+          <span>＞</span>
+        </div>
+
       <%# 商品が売れている場合は、sould outの表示をしましょう。 %>
       <% if Order.find_by(product_id: @product.id) %>
       <div class='sold-out'>
