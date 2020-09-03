@@ -9,6 +9,14 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
   has_many :comments
 
+  def self.search(search)
+    if search != ""
+      Product.where('title LIKE(?)', "%#{search}%")
+    else
+      nil
+    end
+  end
+
   enum condition: {
     '---': 1,
     unused: 2,

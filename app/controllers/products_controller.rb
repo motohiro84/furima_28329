@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_product, only: [:edit, :update, :show, :destroy]
 
   def index
@@ -45,6 +45,11 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
+    @keyword = params[:keyword]
   end
 
   private
