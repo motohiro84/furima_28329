@@ -110,6 +110,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = 'ws://18.180.120.243cable'
+  config.action_cable.url = 'ws://18.180.120.243/cable'
   config.action_cable.allowed_request_origins = [ 'http//18.180.120.243' ]
 end
