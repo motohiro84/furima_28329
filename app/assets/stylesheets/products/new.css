@@ -189,6 +189,7 @@
   height: 50px;
   font-size: 14px;
   margin-bottom: 4vh;
+  cursor: pointer;
 }
 
 .back-btn {

@@ -120,7 +120,7 @@
         <div class="comment-sentence" >
           <div class="comment-view" >
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
+            <span class="message-text"><%= comment.text %></span>
           </div>
           <div class="comment-time">
           <%= l comment.created_at %>
