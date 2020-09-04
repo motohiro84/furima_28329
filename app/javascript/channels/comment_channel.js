@@ -21,8 +21,8 @@ consumer.subscriptions.create("CommentChannel", {
                   ${data.created_at}
                   </div>
                   </div>`;
-    const comments = document.getElementById('comments');
+    const comments = document.getElementById('comment_2');
     const newComment = document.getElementById('comment_text');
-    comments.insertAdjacentHTML('beforeend', html);
+    comments.insertAdjacentHTML('afterbegin', html);
     newComment.value='';  }
 });

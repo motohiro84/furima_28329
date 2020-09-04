@@ -19,6 +19,8 @@ ja:
         postage: 配送料の負担
         shipment: 発送までの日数
         user: ユーザー情報
+      comment:
+        text: コメント
   activemodel:
     attributes:
       product_order:

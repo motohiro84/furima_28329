@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @product.comments.includes(:user)
+    @comments = @product.comments.includes(:user).order('created_at DESC')
   end
 
   def destroy
