@@ -1,0 +1,16 @@
+          <% if user_signed_in? %>
+            <% if @product.favorited_by?(current_user) %>
+              <%=link_to   destroy_2_product_favorites_path(@product.id), class:'favorite-btn', method: :delete, remote: true do %>
+                <i class="fas fa-heart " id="star"></i>お気に入り <%= @product.favorites.count %>
+              <% end %>
+            <% else %>
+              <%=link_to   create_2_product_favorites_path(@product.id), class:'favorite-btn', method: :post, remote: true do %>
+                <i class="far fa-heart " id="star2"></i>お気に入り <%= @product.favorites.count %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% unless user_signed_in? %>
+              <%=link_to  new_user_session_path, class:'favorite-btn', method: :post, remote: true do %>
+                <i class="far fa-heart " id="star2"></i>お気に入り <%= @product.favorites.count %>
+              <% end %>
+          <% end %>

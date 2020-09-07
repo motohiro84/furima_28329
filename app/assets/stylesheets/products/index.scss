@@ -316,11 +316,19 @@ a {
 .star-btn {
   display: flex;
   align-items: center;
+  color: black;
 }
 
-.star-icon {
-  height: 2vh;
-  width: 2vh;
+#star {
+  position: static;
+  font-size: 1.5em;
+  margin-right: 0.5vw;
+  color: rgb(224, 36, 94);
+}
+
+#star2 {
+  position: static;
+  font-size: 1.5em;
   margin-right: 0.5vw;
 }
 

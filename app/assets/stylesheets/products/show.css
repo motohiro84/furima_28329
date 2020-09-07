@@ -260,3 +260,7 @@
 .snap-btn:hover {
   color: #fff;
 }
+
+.second_favo_button {
+  display: flex;
+}
