@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :orders, only:[:index, :create]
     resources :comments, only: :create
+    resource :favorites, only: [:create, :destroy]
     collection do
       get 'search'
     end

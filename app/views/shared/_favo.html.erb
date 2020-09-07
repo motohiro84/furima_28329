@@ -1,0 +1,16 @@
+          <% if user_signed_in? %>
+            <% if product.favorited_by?(current_user) %>
+              <%=link_to  product_favorites_path(product.id), class:'star-btn', method: :delete, remote: true do %>
+                <i class="fas fa-heart" id="star"></i><%= product.favorites.count %>
+              <% end %>
+            <% else %>
+              <%=link_to  product_favorites_path(product.id), class:'star-btn', method: :post, remote: true do %>
+                <i class="far fa-heart " id="star2"></i><%= product.favorites.count %>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% unless user_signed_in? %>
+              <%=link_to  new_user_session_path, class:'star-btn' do %>
+                <i class="far fa-heart " id="star2"></i><%= product.favorites.count %>
+              <% end %>
+          <% end %>

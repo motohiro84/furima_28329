@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :prefecture
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def self.search(search)
     if search != ""
@@ -17,6 +18,10 @@ class Product < ApplicationRecord
     end
   end
 
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+ 
   enum condition: {
     '---': 1,
     unused: 2,
