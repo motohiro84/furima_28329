@@ -112,4 +112,19 @@ Rails.application.configure do
   ActionCable.server.config.disable_request_forgery_protection = true
   config.action_cable.url = 'ws://18.180.120.243/cable'
   config.action_cable.allowed_request_origins = [ 'http//18.180.120.243' ]
+
+  config.action_mailer.default_url_options = { host: 'http//18.180.120.243' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :domain => "gmail.com",
+    :port => 587,
+    :user_name => ENV['SMTP_USER_NAME'],
+    :password => ENV['SMTP_PASSWD'],
+    :authentication => 'login',
+    :enable_starttls_auto => true
+  }
+
+
 end
