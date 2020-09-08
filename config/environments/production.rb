@@ -113,7 +113,7 @@ Rails.application.configure do
   config.action_cable.url = 'ws://18.180.120.243/cable'
   config.action_cable.allowed_request_origins = [ 'http//18.180.120.243' ]
 
-  config.action_mailer.default_url_options = { host: 'http//18.180.120.243' }
+  config.action_mailer.default_url_options = { host: 'http//18.180.120.243', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
