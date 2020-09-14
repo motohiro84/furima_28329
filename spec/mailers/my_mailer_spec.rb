@@ -1,18 +1,17 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe MyMailer, type: :mailer do
-  describe "sendmail_confirm" do
+  describe 'sendmail_confirm' do
     let(:mail) { MyMailer.sendmail_confirm }
 
-    it "renders the headers" do
-      expect(mail.subject).to eq("Sendmail confirm")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
+    it 'renders the headers' do
+      expect(mail.subject).to eq('Sendmail confirm')
+      expect(mail.to).to eq(['to@example.org'])
+      expect(mail.from).to eq(['from@example.com'])
     end
 
-    it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+    it 'renders the body' do
+      expect(mail.body.encoded).to match('Hi')
     end
   end
-
 end

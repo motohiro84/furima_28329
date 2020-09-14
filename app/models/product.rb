@@ -11,17 +11,13 @@ class Product < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
-    if search != ""
-      Product.where('title LIKE(?)', "%#{search}%")
-    else
-      nil
-    end
+    Product.where('title LIKE(?)', "%#{search}%") if search != ''
   end
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
- 
+
   enum condition: {
     '---': 1,
     unused: 2,
