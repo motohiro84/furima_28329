@@ -154,3 +154,9 @@
   text-align: right;
   cursor: pointer;
 }
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

@@ -101,3 +101,5 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth-yahoojp'
 
 gem "jquery-rails"
+
+gem 'recaptcha', require: "recaptcha/rails"
