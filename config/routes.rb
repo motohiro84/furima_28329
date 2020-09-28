@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :users, only:[:register] do
       get 'register', on: :collection
   end
-
+  
+  resources :secrets,      only:[:index]
   root to: 'products#index'
   resources :products do
+    get 'secret', on: :collection
     resources :orders,      only:[:index, :create]
     resources :comments,    only: :create
     resource :favorites,    only: [:create, :destroy] do
