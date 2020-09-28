@@ -11,7 +11,11 @@ class Product < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
-    Product.where('title LIKE(?)', "%#{search}%") if search != ''
+    if search != ""
+      Product.where('title LIKE(?)', "%#{search}%")
+    else
+      nil
+    end
   end
 
   def favorited_by?(user)
