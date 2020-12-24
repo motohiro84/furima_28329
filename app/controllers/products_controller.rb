@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
 
   def search
     @keyword = params[:keyword]
-    if @keyword == "secretgame"
+    if @keyword == "ゲーム"
       redirect_to secrets_path
     end
     @products = Product.search(params[:keyword])
